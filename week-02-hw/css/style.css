@@ -5,7 +5,10 @@
     border: solid 1px;
 }
 
-.movie .description {
+.movie,
+.description {
+  margin: 0 50px;
+  padding: 10px;
 }
 
 /*

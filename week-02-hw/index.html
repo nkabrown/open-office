@@ -9,11 +9,24 @@
     <script src="js/main.js"></script>
     <script>
       function render(movieArray, displayWide) {
-        // This function will get called automagically.
 
-        // Replace this return call with the string of HTML that you
-        // generate:
-        return "Hello, world.";
+        return renderMovie(movieArray[0]);
+      }
+
+      function renderMovie(movie) {
+        var htmlstring = `<div class="movie animation">
+           <h1 class="name">${movie.name}</h1>
+           <p>Release date: <span class="year">${movie.year}</span>, Genre: <span class="genre">${movie.genre}</span>.</p>
+           <div>
+             <ul>
+             ${movie.cast.map(star => `<li>${star} </li>`).join('')}
+             </ul>
+           </div>
+           <p class="description">${movie.description}</p>
+        </div>`
+
+        console.log(htmlstring);
+        return htmlstring;
       }
 
       // Add additional function definitions here.

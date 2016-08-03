@@ -9,8 +9,11 @@
     <script src="js/main.js"></script>
     <script>
       function render(movieArray, displayWide) {
-
-        return renderMovie(movieArray[0]);
+        var html = '';
+        movieArray.forEach(movie => {
+          html += renderMovie(movie);
+        });
+        return html;
       }
 
       function renderMovie(movie) {

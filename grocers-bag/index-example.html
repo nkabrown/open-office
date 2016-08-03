@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <title>Grocery List Project</title>
+  <style>
+  </style>
+</head>
+<body>
+  <div>
+    <input type="text" autocomplete="off" name="groceries">
+    <button onclick="addGrocery()">Add</button>
+    <ul>
+    </ul>
+    <select onchange="sort()">
+      <option></option>
+      <option>Alphabetical</option>
+    </select>
+  </div>
+  <script>
+    function addGrocery() {
+      var input = document.getElementsByTagName('input').item(0);
+      var el = document.createElement('li');
+      el.textContent = input.value;
+      var list = document.getElementsByTagName('ul').item(0);
+      list.appendChild(el);
+      input.value = '';
+    }
+   function sort() {
+     var selected = document.querySelector('option:checked').textContent;
+     if (selected === 'Alphabetical') {
+       sortAlphabet();
+     }
+     function sortAlphabet() {
+       var listItems = document.querySelectorAll('li');
+       var items = []; 
+       listItems.forEach(d => {
+         items.push(d.textContent);
+         d.remove();
+         return items;
+       });
+       items.sort();
+       items.forEach(d => {
+         var list = document.getElementsByTagName('ul')[0];
+         var el = document.createElement('li');
+         el.textContent = d;
+         list.appendChild(el);
+       });
+     }
+   }
+  </script>
+</body>

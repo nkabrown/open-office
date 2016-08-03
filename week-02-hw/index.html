@@ -11,7 +11,7 @@
       function render(movieArray, displayWide) {
         var html = '';
         movieArray.forEach(movie => {
-          html += renderMovie(movie);
+          html += renderMovieCompact(movie);
         });
         return html;
       }
@@ -29,6 +29,16 @@
         </div>`
 
         console.log(htmlstring);
+        return htmlstring;
+      }
+
+      function renderMovieCompact(movie) {
+        var htmlstring = `<li class="movie animation">
+            <span class="name">${movie.name}</span>
+            (<span class="year">${movie.year}</span>,
+            <span class="genre">${movie.genre}</span>)
+            Starring: ${movie.cast.map(star => star).join(', ')}
+          </li>`
         return htmlstring;
       }
 

@@ -22,6 +22,7 @@ app.model({
 
 const view = (state, prev, send) => {
   return html`<div class="list">
+    <h1>Grocer’s Bag</h1>
     <input type="text" autocomplete="off" name="groceries">
     <button onclick=${addItem}>Add</button>
     <ul>${state.list.map(item => html`<li>${item}</li>`)}</ul>
@@ -33,7 +34,6 @@ const view = (state, prev, send) => {
 
   function addItem(e) {
     const input = document.querySelector('input');
-    console.log(input);
     send('add', input.value);
     input.value = '';
   }

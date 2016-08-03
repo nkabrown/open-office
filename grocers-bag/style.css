@@ -1,4 +1,16 @@
+body {
+	font-family: "Raleway", sans-serif;
+}
+
 .list {
   width: 20%;
   margin: 0 auto;
+}
+
+li {
+	list-style: none;
+}
+
+li:before {
+	content: "🚩";
 }

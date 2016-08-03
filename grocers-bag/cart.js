@@ -21,7 +21,7 @@ app.model({
 });
 
 const view = (state, prev, send) => {
-  return html`<div>
+  return html`<div class="list">
     <input type="text" autocomplete="off" name="groceries">
     <button onclick=${addItem}>Add</button>
     <ul>${state.list.map(item => html`<li>${item}</li>`)}</ul>

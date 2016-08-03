@@ -10,10 +10,17 @@
     <script>
       function render(movieArray, displayWide) {
         var html = '';
-        movieArray.forEach(movie => {
-          html += renderMovieCompact(movie);
-        });
-        return html;
+        if (displayWide) {
+          movieArray.forEach(movie => {
+            html += renderMovie(movie);
+          });
+          return html;
+        } else {
+          movieArray.forEach(movie => {
+            html += renderMovieCompact(movie);
+          });
+          return html;
+        }
       }
 
       function renderMovie(movie) {

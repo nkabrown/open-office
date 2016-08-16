@@ -1,0 +1,20 @@
+{
+  "name": "open-office",
+  "version": "0.1.0",
+  "description": "working alongside aspiring programmers",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "dev": "budo main.js --live",
+    "build": "browserify main.js -o bundle.js"
+  },
+  "author": "Nathan Brown <nkabrown@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "budo": "^9.0.0",
+    "tape": "^4.6.0"
+  },
+  "dependencies": {
+    "browserify": "^13.1.0"
+  }
+}

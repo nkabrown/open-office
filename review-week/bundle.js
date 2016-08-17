@@ -74,6 +74,48 @@ exercise.searchNum = function(array, target) {
   return false;
 }
 
+// ['G', 'PG', 'PG-13', 'R', 'NC-17'] Write a function whatMovies that receives an age and returns an array of all the movies that
+// age can watch. Write two solutions: one using if...else, the other using switch... case
+// implemented with if statements
+exercise.whatMovies = function(age) {
+  const ratings = ['G', 'PG', 'PG-13', 'R', 'NC-17'];
+  if (age < 9) {
+    return [ratings[0]];
+  } else if (age < 13) {
+    return ratings.slice(0, -3);
+  } else if (age < 17) {
+    return ratings.slice(0, -2);
+  } else {
+    return ratings;
+  }
+}
+
+// implemented with switch case
+exercise.whatMoviesSwitch = function(age) {
+  const ratings = ['G', 'PG', 'PG-13', 'R', 'NC-17'];
+  let stature;
+  if (age < 9) {
+    stature = 'child';
+  } else if (age < 13) {
+    stature = 'young person';
+  } else if (age < 17) {
+    stature = 'teen';
+  } else {
+    stature = 'adult';
+  }
+
+  switch(stature) {
+    case 'child':
+      return [ratings[0]];
+    case 'young person':
+      return ratings.slice(0, -3);
+    case 'teen':
+      return ratings.slice(0, -2);
+    default:
+      return ratings;
+  }
+}
+
 module.exports = exercise;
 
 },{}],2:[function(require,module,exports){
@@ -85,5 +127,9 @@ console.log('Is 67 a prime number?  %s', lib.isPrime(67));
 console.log('Is 68 a prime number?  %s', lib.isPrime(68));
 console.log('Is 7 within [1, 2, 3, 4]? %s', lib.searchNum([1,2,3,4], 7));
 console.log('Is 2 within [1, 2, 3, 4]? %s', lib.searchNum([1,2,3,4], 2));
+console.log('If I\'m 9 I can see which movies? %o', lib.whatMovies(9));
+console.log('If I\'m 39 I can see which movies? %o', lib.whatMovies(39));
+console.log('If I\'m 9 I can see which movies? %o', lib.whatMoviesSwitch(9));
+console.log('If I\'m 39 I can see which movies? %o', lib.whatMoviesSwitch(39));
 
 },{"./exercises.js":1}]},{},[2]);

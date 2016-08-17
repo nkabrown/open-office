@@ -6,3 +6,7 @@ console.log('Is 67 a prime number?  %s', lib.isPrime(67));
 console.log('Is 68 a prime number?  %s', lib.isPrime(68));
 console.log('Is 7 within [1, 2, 3, 4]? %s', lib.searchNum([1,2,3,4], 7));
 console.log('Is 2 within [1, 2, 3, 4]? %s', lib.searchNum([1,2,3,4], 2));
+console.log('If I\'m 9 I can see which movies? %o', lib.whatMovies(9));
+console.log('If I\'m 39 I can see which movies? %o', lib.whatMovies(39));
+console.log('If I\'m 9 I can see which movies? %o', lib.whatMoviesSwitch(9));
+console.log('If I\'m 39 I can see which movies? %o', lib.whatMoviesSwitch(39));

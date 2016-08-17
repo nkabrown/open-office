@@ -30,3 +30,10 @@ tape('determine if prime while loop', function(t) {
   t.equal(lib.isPrime(67), true);
   t.equal(lib.isPrime(68), false);
 });
+
+tape('find a number in an array', function(t) {
+  t.plan(2);
+  const arr = [1,2,3,4];
+  t.equals(lib.searchNum(arr, 2), true);
+  t.equals(lib.searchNum(arr, 5), false);
+});

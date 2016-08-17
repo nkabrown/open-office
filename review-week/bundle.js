@@ -64,8 +64,14 @@ exercise.isPrimeWhile = function(N) {
 
 // Write a function searchNum that iterates through a sorted array and returns the target number if found. The function should also
 // log each iteration to the console.
-function searchNum(array) {
-  
+exercise.searchNum = function(array, target) {
+  for (num of array) {
+    console.log(num);
+    if (num === target) {
+      return true;
+    }
+  }
+  return false;
 }
 
 module.exports = exercise;
@@ -77,5 +83,7 @@ console.log('sumArgsWhile("2",4,5) returns %d', lib.sumArgsWhile("2",4,5));
 console.log('sumArgsImproved("2",4,5) returns %d', lib.sumArgsImproved('2', 4, 5));
 console.log('Is 67 a prime number?  %s', lib.isPrime(67));
 console.log('Is 68 a prime number?  %s', lib.isPrime(68));
+console.log('Is 7 within [1, 2, 3, 4]? %s', lib.searchNum([1,2,3,4], 7));
+console.log('Is 2 within [1, 2, 3, 4]? %s', lib.searchNum([1,2,3,4], 2));
 
 },{"./exercises.js":1}]},{},[2]);

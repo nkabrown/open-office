@@ -63,8 +63,14 @@ exercise.isPrimeWhile = function(N) {
 
 // Write a function searchNum that iterates through a sorted array and returns the target number if found. The function should also
 // log each iteration to the console.
-function searchNum(array) {
-  
+exercise.searchNum = function(array, target) {
+  for (num of array) {
+    console.log(num);
+    if (num === target) {
+      return true;
+    }
+  }
+  return false;
 }
 
 module.exports = exercise;

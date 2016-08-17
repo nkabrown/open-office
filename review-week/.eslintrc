@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "prefer-const": "warn",
+    "no-const-assign": "error",
+    "no-var": "warn",
+    "eqeqeq": ["error", "smart"],
+    "array-callback-return": "warn",
+    "quotes": ["error", "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+    "prefer-template": "warn",
+    "func-style": ["error", "declaration", {"allowArrowFunctions": true}],
+    "no-loop-func": "warn",
+    "prefer-arrow-callback": "error",
+    "arrow-spacing": ["error", {"before": true, "after": true}],
+    "arrow-body-style": ["error", "as-needed"],  
+    "arrow-parens": ["error", "as-needed"],
+    "no-duplicate-imports": "error"
+  }
+}

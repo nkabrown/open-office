@@ -28,7 +28,7 @@ exercise.sumArgsWhile = function() {
 // implement with rest parameters
 exercise.sumArgsImproved = function(...args) {
   let sum = 0;
-  for (arg of args) {
+  for (const arg of args) {
     sum += +arg;
   }
   return sum;
@@ -64,7 +64,7 @@ exercise.isPrimeWhile = function(N) {
 // Write a function searchNum that iterates through a sorted array and returns the target number if found. The function should also
 // log each iteration to the console.
 exercise.searchNum = function(array, target) {
-  for (num of array) {
+  for (const num of array) {
     console.log(num);
     if (num === target) {
       return true;
@@ -113,6 +113,23 @@ exercise.whatMoviesSwitch = function(age) {
     default:
       return ratings;
   }
+}
+
+// Write a function numDups that receives an array and counts the number of duplicates that exist in the array.
+// implemented with hash map
+exercise.numDups = function(array) {
+  const reducedArr = array.reduce((hash, element) => {
+    hash[`${element}`] = hash[`${element}`] || 0;
+    hash[`${element}`] += 1;
+    return hash;
+  }, {});  
+  let count = 0;
+  for (const key in reducedArr) {
+    if (reducedArr[key] > 1) {
+      count++;
+    }
+  }
+  return count + ' duplicates in array';
 }
 
 module.exports = exercise;

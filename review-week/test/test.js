@@ -53,3 +53,10 @@ tape('determine the movie ratings which apply switch case', function(t) {
   t.deepEquals(lib.whatMoviesSwitch(16), ['G', 'PG', 'PG-13']);
   t.deepEquals(lib.whatMoviesSwitch(39), ['G', 'PG', 'PG-13', 'R', 'NC-17']);
 });
+
+tape('count the number of duplicates in the array', function(t) {
+  t.plan(3);
+  t.equals(lib.numDups([1,1,1]), '1 duplicates in array');
+  t.equals(lib.numDups([2,3,4,5,2,5]), '2 duplicates in array');
+  t.equals(lib.numDups([1,2,3,4]), '0 duplicates in array');
+});

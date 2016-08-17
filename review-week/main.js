@@ -10,3 +10,4 @@ console.log('If I\'m 9 I can see which movies? %o', lib.whatMovies(9));
 console.log('If I\'m 39 I can see which movies? %o', lib.whatMovies(39));
 console.log('If I\'m 9 I can see which movies? %o', lib.whatMoviesSwitch(9));
 console.log('If I\'m 39 I can see which movies? %o', lib.whatMoviesSwitch(39));
+console.log(lib.numDups([2,5,6,2,3,4,5]));

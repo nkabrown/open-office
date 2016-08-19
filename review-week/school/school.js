@@ -28,14 +28,12 @@ var isaac = new Student("Isaac Newton");
 // the prototype of our constructor so they can be inherited by the instances of the constructor.
 // Remember that 'this' within a method refers to the object on which the method is called.
 Student.prototype.dropout = function(course) {
-  var student = this;
-
   for (var i = 0; i < this.schedule.length; i++) {
     if (this.schedule[i].name === course.name) {
       if (i === 0) {
-        student.schedule.shift();
+        this.schedule.shift();
       } else {
-        student.schedule.splice(i, 1); 
+        this.schedule.splice(i, 1);
       }
     }
   }

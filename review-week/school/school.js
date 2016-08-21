@@ -24,8 +24,8 @@ var kanye = new Student("Kanye West");
 var albert = new Student("Albert Einstein");
 var isaac = new Student("Isaac Newton");
 
-// we here assign two methods (functions that are the value of an object's property) to
-// the prototype of our constructor so they can be inherited by the instances of the constructor.
+// we here assign methods (functions that are the value of an object's property) to
+// the prototypes of our constructors so they can be inherited by the instances of the constructor.
 // Remember that 'this' within a method refers to the object on which the method is called.
 Student.prototype.dropout = function(course) {
   for (var i = 0; i < this.schedule.length; i++) {
@@ -40,7 +40,7 @@ Student.prototype.dropout = function(course) {
 }
 
 Course.prototype.enroll = function() { 
-  for (var i = 0; i < arguments.length; i++) {//arguments is a built tool
+  for (var i = 0; i < arguments.length; i++) { //arguments is a built-in tool
     var student = arguments[i];
     this.roster.push(student);
     student.schedule.push(this); //prototype & this always together

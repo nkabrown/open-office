@@ -132,4 +132,33 @@ exercise.numDups = function(array) {
   return count + ' duplicates in array';
 }
 
+/*
+  Do these two expressions do the same thing? Why or why not?
+  3 === 3;
+  3 == 3;
+*/
+// Strictly speaking they run two seperate algorithms: Strict Equality Comparison (===) and Abstract Eqaulity Comparison (==).
+// But they are doing the same thing only because they are comparing two operands of the same type. In the Abstract Equality
+// Comparison if the two operands are of the same type then Strict Equality Comparison is executed.
+// See Abstract Equality Comparison and Strict Equality Comparison in the ECMAScript 2015 Language Specification.
+
+// Write a function reverseWords that reverse the words in a string. Two solutions: for and while
+exercise.reverseWords = function(str) {
+  var newStr = '';
+  for (var i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+}
+
+exercise.reverseWordsWhile = function(str) {
+  var newStr = '';
+  var i = str.length - 1;
+  while (i >= 0) {
+    newStr += str[i];
+    i--;
+  }
+  return newStr;
+}
+
 module.exports = exercise;

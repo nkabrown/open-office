@@ -168,7 +168,7 @@ exercise.whatMoviesSwitch = function (age) {
 };
 
 // Write a function numDups that receives an array and counts the number of duplicates that exist in the array.
-//  Write two solutions: for and while
+// implemented with hash map
 exercise.numDups = function (array) {
   var reducedArr = array.reduce(function (hash, element) {
     hash['' + element] = hash['' + element] || 0;
@@ -182,6 +182,35 @@ exercise.numDups = function (array) {
     }
   }
   return count + ' duplicates in array';
+};
+
+/*
+  Do these two expressions do the same thing? Why or why not?
+  3 === 3;
+  3 == 3;
+*/
+// Strictly speaking they run two seperate algorithms: Strict Equality Comparison (===) and Abstract Eqaulity Comparison (==).
+// But they are doing the same thing only because they are comparing two operands of the same type. In the Abstract Equality
+// Comparison if the two operands are of the same type then Strict Equality Comparison is executed.
+// See Abstract Equality Comparison and Strict Equality Comparison in the ECMAScript 2015 Language Specification.
+
+// Write a function reverseWords that reverse the words in a string. Two solutions: for and while
+exercise.reverseWords = function (str) {
+  var newStr = '';
+  for (var i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+};
+
+exercise.reverseWordsWhile = function (str) {
+  var newStr = '';
+  var i = str.length - 1;
+  while (i >= 0) {
+    newStr += str[i];
+    i--;
+  }
+  return newStr;
 };
 
 module.exports = exercise;
@@ -202,5 +231,8 @@ console.log('If I\'m 39 I can see which movies? %o', lib.whatMovies(39));
 console.log('If I\'m 9 I can see which movies? %o', lib.whatMoviesSwitch(9));
 console.log('If I\'m 39 I can see which movies? %o', lib.whatMoviesSwitch(39));
 console.log(lib.numDups([2, 5, 6, 2, 3, 4, 5]));
+console.log('Reverse the string "Hello there I\'m backwards." %s', lib.reverseWords('Hello there I\'m backwards.'));
+console.log(lib.reverseWords("Pirate Johnson"));
+console.log('Reverse the string "Reverse this with a while loop." %s', lib.reverseWordsWhile('Reverse this with a while loop.'));
 
 },{"./exercises.js":1}]},{},[2]);

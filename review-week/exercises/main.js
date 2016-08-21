@@ -11,3 +11,6 @@ console.log('If I\'m 39 I can see which movies? %o', lib.whatMovies(39));
 console.log('If I\'m 9 I can see which movies? %o', lib.whatMoviesSwitch(9));
 console.log('If I\'m 39 I can see which movies? %o', lib.whatMoviesSwitch(39));
 console.log(lib.numDups([2,5,6,2,3,4,5]));
+console.log('Reverse the string "Hello there I\'m backwards." %s', lib.reverseWords('Hello there I\'m backwards.'));
+console.log(lib.reverseWords("Pirate Johnson"));
+console.log('Reverse the string "Reverse this with a while loop." %s', lib.reverseWordsWhile('Reverse this with a while loop.'));

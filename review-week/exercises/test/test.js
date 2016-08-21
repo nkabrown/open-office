@@ -60,3 +60,13 @@ tape('count the number of duplicates in the array', function(t) {
   t.equals(lib.numDups([2,3,4,5,2,5]), '2 duplicates in array');
   t.equals(lib.numDups([1,2,3,4]), '0 duplicates in array');
 });
+
+tape('reverse strings with for-loop', function(t) {
+  t.plan(1);
+  t.equals(lib.reverseWords('Hello World!'), '!dlroW olleH');
+});
+
+tape('reverse strings with a while-loop', function(t) {
+  t.plan(1);
+  t.equals(lib.reverseWordsWhile('Hello World!'), '!dlroW olleH');
+});

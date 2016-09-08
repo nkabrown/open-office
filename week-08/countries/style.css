@@ -6,7 +6,22 @@ main {
 
 .subsection {
   float: left;
-  width: 50%;
+}
+
+.subsection:first-child {
+  width: 20%;
+}
+
+.regions,
+.subregions {
+  min-height: 100px;
+}
+
+.subregions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 100px;
 }
 
 h2 {
@@ -15,4 +30,18 @@ h2 {
 
 ul {
 	list-style: none;
+  padding-left: 5px;
+}
+
+li {
+  margin-right: 25px;
+}
+
+li:hover {
+  color: #9a93e8;
+  text-shadow: 1px 0 #dedede;
+}
+
+hr {
+  clear: both;
 }

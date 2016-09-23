@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React Tutorial</title>
+    <!-- Not present in the tutorial. Just for basic styling. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <script src="https://unpkg.com/react@15.3.0/dist/react.js">
+      // a declarative, efficient, and flexible JavaScript library for building user interfaces 
+    </script>
+    <script src="https://unpkg.com/react-dom@15.3.0/dist/react-dom.js">
+      // entry point of the DOM-related rendering paths
+   </script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">
+      // transpile es6 and jsx
+    </script>
+    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js">
+      // make ajax calls
+    </script>
+    <script src="https://unpkg.com/remarkable@1.6.2/dist/remarkable.min.js">
+      // parse markdown into html
+    </script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <!--script type="text/babel" src="scripts/example.js"></script-->
+    <script type="text/babel">
+      /*
+         - CommentBox
+            - CommentList
+               - Comment
+            - CommentForm
+      */
+  
+      // ReactClass createClass(object specification) - create a component class, given a specification
+      // implements at render method which returns one single child
+      // render returns a tree of React Components that will eventually render to HTML
+      var CommentBox = React.createClass({
+			  render: function() {
+          return (
+            <div className="commentBox">
+              <h1>Comments</h1>
+              <CommentList />
+              <CommentForm />
+            </div>
+          );
+        } 	
+      });
+
+      var CommentList = React.createClass({
+				render: function() {
+					return (
+            <div className="commentList">
+							<Comment author="Pete Hunt">This is a comment.</Comment>
+              <Comment author="Nathan Brown">This is another comment.</Comment>
+            </div> 
+          );
+        }
+      });
+
+      var CommentForm = React.createClass({
+				render: function() {
+					return  (
+						<div className="commentForm">
+              Hello, World! I am a comment form.
+            </div>
+          );
+        }
+      });
+
+      // data passed from a parent component is available as a property on the child component
+      var Comment = React.createClass({
+				render: function() {
+					return  (
+					  <div className="comment">
+              <h2 className="commentAuthor">
+                {this.props.author}
+              </h2>
+              {this.props.children}
+            </div>
+          );
+        }
+      });
+ 
+      // render( ReactElement element, DOMElement, [function callback])
+      // Render a ReactElement into the DOM in the supplied container and return a reference to the component (or returns null for stateless components)
+      // ReactDOM.render instantiates the root component, starts the framework, and injects the markup into a raw DOM element, provided as the second argument 
+      ReactDOM.render(
+				<CommentBox />,
+        document.getElementById('content')
+      );
+    </script>
+  </body>
+</html>

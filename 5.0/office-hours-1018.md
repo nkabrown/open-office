@@ -26,3 +26,27 @@ var result = [];
 // use unshift to append to the beginning of the array instead of the end
 array.forEach(elem => result.unshift(elem));
 ```
+
+Reversing an array — partial functional style
+
+```
+var array = [1, 2, 3, 4, 5];
+
+array.reduceRight((acc, elem) => (acc.push(elem), acc), []);
+//=> [5, 4, 3, 2, 1]
+
+array.reduce((acc, elem) => (acc.unshift(elem), acc), []);
+//=> [5, 4, 3, 2, 1]
+```
+
+Reversing an array — functional style
+
+```
+var array = [1, 2, 3, 4, 5];
+
+array.reduce((acc, elem) => (acc = [elem, ...acc], acc), []);
+//=> [5, 4, 3, 2, 1]
+
+array.reduce((acc, elem) => (acc = [elem].concat(acc), acc), []);
+//=> [5, 4, 3, 2, 1]
+```

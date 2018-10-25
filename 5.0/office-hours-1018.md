@@ -1,11 +1,30 @@
 # Office Hours 18 October 2018
 
-Function callbacks demonstrated through array methods such as map and forEach which take element, index, array parameters in the callback definition.
+Function callbacks demonstrated through array methods such as `map` and `forEach` which take element, index, array parameters (or the current value of the element, the index of the element, and the object being traversed as parameters) in the callback definition. Remember these parameters have an expected position. The first parameter will always be the current value of the element, the second the index of the element, etc.
+
+You have to provide the first parameter when you call the callback, but you can provide more, even all.
+
+```
+var array = [1, 2, 3, 4, 5];
+
+// call map with only first available callback parameter (the current value of the element)
+array.map(elem => elem + 2);
+//=> [3, 4, 5, 6, 7]
+
+// call map with the first two available callback parameters (the current value of the element and the index of the element)
+array.map((elem, i) => elem + 2 + i);
+//=> [3, 5, 7, 9, 11]
+
+// call map with all three available callback parameters (the current value of the element, the index of the element, and the object being traversed)
+array.map(((elem, i, obj) => obj);
+//=> [[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]]
+// returns an array of arrays of the array
+```
 
 Good examples of callbacks: (Follow-up)
 
 - array method callbacks
-- addEventListener
+- event listeners
 
 What is the difference between statements and expressions in JavaScript? (Follow-up)
 
@@ -25,6 +44,8 @@ var result = [];
 
 // use unshift to append to the beginning of the array instead of the end
 array.forEach(elem => result.unshift(elem));
+
+result
 //=> [5, 4, 3, 2, 1]
 ```
 

@@ -78,7 +78,7 @@ array.reduce((acc, elem) => (acc = [elem].concat(acc), acc), []);
 Return the second largest element of an array without mutating the original array
 
 ```
-var array = [4, 2, 6, 7, 9, 1];
+var array = [4, 6, 7, 2, 9, 1];
 
 array.reduce((acc, elem) => (acc.push(elem), acc.sort((a,b) => a - b)), [])[1];
 //=> 2

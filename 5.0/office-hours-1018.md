@@ -11,11 +11,13 @@ var array = [1, 2, 3, 4, 5];
 array.map(elem => elem + 2);
 //=> [3, 4, 5, 6, 7]
 
-// call map with the first two available callback parameters (the current value of the element and the index of the element)
+// call map with the first two available callback parameters (the current value of the
+// element and the index of the element)
 array.map((elem, i) => elem + 2 + i);
 //=> [3, 5, 7, 9, 11]
 
-// call map with all three available callback parameters (the current value of the element, the index of the element, and the object being traversed)
+// call map with all three available callback parameters (the current value of the
+// element, the index of the element, and the object being traversed)
 array.map(((elem, i, obj) => obj);
 //=> [[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]]
 // returns an array of arrays of the array
@@ -78,6 +80,6 @@ Return the second largest element of an array without mutating the original arra
 ```
 var array = [4, 2, 6, 7, 9, 1];
 
-var secondLargest = array.reduce((acc, elem) => (acc.push(elem), acc.sort((a,b) => a - b)), [])[1];
+array.reduce((acc, elem) => (acc.push(elem), acc.sort((a,b) => a - b)), [])[1];
 //=> 2
 ```

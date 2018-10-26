@@ -34,7 +34,7 @@ statement -> function declaration
 
 expression -> function expression and arrow function
 
-Why would you chose to use one form of function defintion over the others? (Follow-up)
+Why would you chose to use one form of function definition over the others? (Follow-up)
 
 `array.push()` constructs an array by appending elements to the end of the array. How would you construct an array by appending elements to the beginning of the array?
 
@@ -61,7 +61,7 @@ array.reduceRight((acc, elem) => (acc.push(elem), acc), []);
 array.reduce((acc, elem) => (acc.unshift(elem), acc), []);
 //=> [5, 4, 3, 2, 1]
 ```
-**Note** – comma operator: The `reduce` functions above and at the bottom of the page show a nice example of a case where the comma operator comes in handy. The comma operator evaluates each expression and returns only the last expression. Since `push` and `unshift` do not return the array but return the new length of the array, the comma operator allows us to insert new elements into the array in the first evaluation and then return the array in the second evaluation back to the callback function. At the bottom of the page it allows us to do two manipulations to the array; both insert a new element and then sort and return the sorted array to the callback function.
+**Note** – comma operator: The `reduce` functions above and at the bottom of the page show a nice example of cases where the comma operator comes in handy. The comma operator evaluates each expression and returns only the last expression. Since `push` and `unshift` do not return the array but return the new length of the array, the comma operator allows us to insert new elements into the array in the first evaluation and then return the array in the second evaluation back to the callback function. At the bottom of the page it allows us to do two manipulations to the array; both insert a new element and then sort and return the sorted array to the callback function.
 
 Reversing an array — functional style (no array mutation)
 ```
@@ -83,5 +83,5 @@ array.reduce((acc, elem) => (acc.push(elem), acc.sort((a,b) => a - b)), [])[1];
 //=> 2
 
 array
-//=> [4, 6, 7, 8, 2, 9, 1]
+//=> [4, 6, 7, 2, 9, 1]
 ```

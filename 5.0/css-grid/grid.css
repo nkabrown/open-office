@@ -1,0 +1,20 @@
+.container div {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: lightblue;
+  border: 2px solid red;
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  grid-gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.one {
+  grid-row: 2;
+  grid-column: 2 / 4; 
+}
